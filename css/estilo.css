@@ -1,0 +1,142 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+img{
+    margin-left: 64px;;
+}
+h1{
+    margin-top: 0px;
+    font-size: 23px;
+}
+h2{
+    font-size: 20px;
+    margin-top: 0px;
+}
+.nav input{
+    border-color: #59e5f0;
+}
+.nav{
+    padding-top: 20px;
+    background-color: #59e5f0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
+.margin{
+    margin-left: 10px;
+}
+.color_blanco{
+    color: white;
+    font-size: 16px;
+}
+.ficha_style h1,h2{
+    text-align: center;
+}
+.ficha_style{
+    position: relative;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #064045;
+    width: 300px;
+    height: 470px;
+    color: white;
+    margin: 10px 14px 10px 17px;
+    display: flex;
+    flex-direction: column;
+}
+.ficha button{
+    background-color: #33cc33;
+    border-color: #33cc33;
+    border-radius: 10px;
+    width: 130px;
+    height: 32px;
+    margin-left: 8px;
+
+}
+.formulario_cliente button{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 11px;
+    border-radius: 30px;
+    background-color: #ff33cc;
+    color: white;
+    border-color: #59e5f0;
+}
+.ficha{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.col-md-6 {
+    width: 65%;
+}
+.formulario_cliente{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #59e5f0;
+    
+}
+.position-bottom{
+    position: absolute;
+    bottom:0;
+    
+}
+textarea{
+    margin-left: 5px;
+}
+.intro{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-left: 300px;
+}
+.flex form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flex form input,select,textarea{
+        height: 34px;
+    margin-left: 10px;
+    width: 144px;
+    padding-left: 10px;
+    border-color: #59e5f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

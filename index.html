@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="crmApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CDM</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body ng-controller="clienteController">
+           <div class="nav">
+               <div class="row">
+               <div class="col-md-5">
+                <input class="margin" type="text" ng-model="searchEmail.email" placeholder="Buscar por E-mail"> 
+                <input type="text" class="filtro" ng-model="search.nombre" placeholder="Buscar por nombre">
+                </div>
+                <div class="col-md-4">
+                <span class="color_blanco"><b>Filtar por Nivel de Estudios</b></span><select name="estudiosOrder" id="estudiosOrder" ng-model="order.estudios">
+                         <option value="" selected>Estudios</option>
+                          <option value="Primaria">Primaria</option> 
+                          <option value="Secundaria">Secundaria</option> 
+                          <option value="Bachillerato">Bachillerato</option>
+                          <option value="Grado Superior">Grado Superior</option>
+                </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="checkbox" ng-model="checked"><span class="color_blanco">Ordenar Alfabéticamente</span>
+                </div>
+                </div>
+            </div>
+            <div class="formulario_cliente">
+               <div class="flex">
+                <form id="form" name="Formulario">
+                    <input type="text" name="nombre" ng-maxlength="20" ng-required="truei" ng-model="Cliente.nombre" placeholder="Nombre Completo"><br>
+                    <!--<span style="color: red;" ng-show="Formularvio.nombre.$invalid && Formulario.nombre.$touched">Nombre Requerido</span>-->
+                    <select name="estudios" id="estudiosSelect" ng-model="Cliente.estudios" ng-required="truei">
+                         <option value="" selected>Estudios</option>
+                          <option value="Primaria">Primaria</option>
+                          <option value="Secundaria">Secundaria</option>
+                          <option value="Bachillerato">Bachillerato</option>
+                          <option value="Grado Superior">Grado Superior</option>
+                     </select><br>
+                    <input type="email" id="name" name="email" ng-model="Cliente.email" ng-required="truei" placeholder="Email">
+                    <input type="text" ng-required="truei" placeholder="URL de la imagen" ng-model="Cliente.imagen"><br>
+                    <input type="text" name="telefono" ng-maxlength="12" ng-required="truei" ng-model="Cliente.telefono" placeholder="Teléfono"><br>
+                    
+                    <!--<span style="color: red;" ng-show="Formulario.telefono.$invalid && Formulario.telefono.$touched">Teléfono Requerido</span>-->
+                    
+                    <textarea name="Description" ng-maxlength="40" ng-required="true" ng-model="Cliente.descripcion" id="description" cols="25" rows="4" placeholder="Descripcion"></textarea><br>
+                    <input type="text" ng-model="Cliente.otros" placeholder="otros.."><br>
+                
+
+                <span ng-show="!showme">
+                    <button ng-disabled="Formulassrio.$invalid" ng-click="nuevoCliente(Cliente)">Crear</button>
+                </span>
+                <span ng-show="showme">
+                    <button ng-click="modificar()">Modificar</button>
+                </span>
+                <span><button ng-click="cancelar()">Cancelar</button></span>
+                </form>
+            </div>
+               </div>
+               <div class="ficha">
+                <span ng-if="!Cliente" class="intro">Introduzca un Cliente</span>
+                <div ng-cloack ng-repeat="usuario in listaClientes | filter:search | filter:order | filter:searchEmail | orderBy:'nombre':checked track by usuario.customerId" class="ficha_style">
+
+                    <h1>{{usuario.name}}</h1>
+                    <p><img ng-src="{{usuario.photo}}" alt="imagen" width="131" height="140"></p>
+                    <h2>{{usuario.email}}</h2>
+                    <b>Teléfono:</b> {{usuario.phone}}
+                    <b>Estudios:</b> {{usuario.estudios}}
+                    <b>Descripción:</b> {{usuario.description}} 
+                    <b>Otros:</b> {{usuario.other}}
+                    <div class="position-bottom">
+                    <button id="crearbtn" ng-click="modificarCliente(usuario.id)">Modificar</button>
+                    <button ng-click="eliminarCliente(usuario.id)">Eliminar</button>
+                    </div> 
+            </div>
+            </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="controllers/app.js"></script>
+    <script src="controllers/factory.js"></script>
+    <script src="controllers/main.controller.js"></script>
+    
+</body>
+
+</html>
