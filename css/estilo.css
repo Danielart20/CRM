@@ -16,11 +16,11 @@ h2{
     margin-top: 0px;
 }
 .nav input{
-    border-color: #59e5f0;
+    border-color: #0073e6;
 }
 .nav{
     padding-top: 20px;
-    background-color: #59e5f0;
+    background-color: #0073e6;
     padding-bottom: 20px;
     border-bottom: 1px solid white;
 }
@@ -62,10 +62,10 @@ input.ng-invalid.ng-touched{
     margin-left: 10px;
     margin-right: 10px;
     padding: 11px;
-    border-radius: 30px;
-    background-color: #ff33cc;
+    border-radius: 15px;
+    background-color: #000099;
     color: white;
-    border-color: #59e5f0;
+    border-color: #000099;
 }
 .ficha{
     display: flex;
@@ -79,7 +79,7 @@ input.ng-invalid.ng-touched{
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #59e5f0;
+    background-color: #0073e6;
     
 }
 .position-bottom{

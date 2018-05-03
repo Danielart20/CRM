@@ -21,9 +21,7 @@
 
         
         function getAll(){
-            return $http.get('http://localhost:3000/api/customers')  
-            
-            
+            return $http.get('http://localhost:3000/api/customers');        
         }
         
         
